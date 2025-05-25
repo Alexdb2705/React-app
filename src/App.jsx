@@ -7,10 +7,9 @@ import Counter from './components/Counter.jsx'
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false)
-  const [counter, setCounter] = useState(0)
   return (
     <>
-      <Counter counter={counter} setCounter={setCounter} />
+      <Counter />
       <TodoTitle />
       <div>
         <input type="text" onChange={event => console.log(event.target.value)} />

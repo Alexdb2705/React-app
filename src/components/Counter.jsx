@@ -1,10 +1,13 @@
-function Counter({ counter, setCounter }) {
+import { useState } from "react"
+
+function Counter() {
+    const [count, setCount] = useState(0)
     return (
         <>
-            <h2 className="counter-header">Counter: {counter}</h2>
-            <button onClick={() => setCounter(counter+1)}>Increment</button>
-            <button onClick={() => setCounter(counter-1)}>Decremente</button>
-            <button onClick={() => setCounter(0)}>Reset</button>
+            <h2 className="counter-header">Counter: {count}</h2>
+            <button onClick={() => setCount(count+1)}>Increment</button>
+            <button onClick={() => setCount(count-1)}>Decrement</button>
+            <button onClick={() => setCount(0)}>Reset</button>
         </>
     )
 }
