@@ -1,15 +1,10 @@
-function Popup({ question }) {
-    function hidingBackupPopup() {
-        document.querySelector('.popup').style.display = "none"
-        document.querySelector('.backdrop').style.display = "none"
-        console.log("Confirmed")
-    }
+function Popup({ question, popupOpen, setPopupOpen }) {
     return (
         <>
             <div className="popup">
                 <span>{question}</span>
                 <div className="popup__btns">
-                    <button className="popup__btn" onClick={hidingBackupPopup}>Confirm</button>
+                    <button className="popup__btn" onClick={() => setPopupOpen(!popupOpen)}>Confirm</button>
                     <button className="popup__btn popup__btn--cancel">Cancel</button>
                 </div>
             </div>
