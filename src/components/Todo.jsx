@@ -1,4 +1,7 @@
-function Todo({ task, description }) {
+import { useState } from "react"
+
+function Todo({ task, setPopupOpen }) {
+    const [thisTask, setThisTask] = useState({ task: task })
     function changeToDoColor(element) {
         let parent = element.target.parentNode
         parent.style.backgroundColor === "red"
@@ -6,11 +9,17 @@ function Todo({ task, description }) {
             : parent.style.backgroundColor = "red"
     }
     return (
+        thisTask.task !== "" ?
         <div className="todo-item">
-            <h2>{task}</h2>
+            <h2>{thisTask.task}</h2>
             {/* <p>{description}</p> */}
-            <button onClick={(_) => changeToDoColor(_)} className="delete-btn">Delete</button>
+            <button onClick={() => {
+                setPopupOpen((prevPopup) => (!prevPopup)); setThisTask(prevTask => ({
+                    ...prevTask, task: ""
+                }))
+            }} className="delete-btn">Delete</button>
         </div>
+        : null
     )
 }
 
