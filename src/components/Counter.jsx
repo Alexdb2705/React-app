@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function Counter() {
     const [count, setCount] = useState(0)
@@ -6,6 +6,9 @@ function Counter() {
     // 1. Use a callback within setState to access the previous value
     // 2. Spread all the properties of prev object into new object
     // 3. Change the property that you want to change
+
+    useEffect(() => {console.log("Age mounted")}, [user.age])
+    useEffect(() => {console.log("Name mounted")}, [user.name])
     return (
         <>
             <label htmlFor="#fontSize-change">Font-size of counter:</label>

@@ -2,7 +2,7 @@ import './App.css'
 import TodoTitle from './components/TodoTitle.jsx'
 import Todo from './components/Todo.jsx'
 import Popup from './components/Popup.jsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Counter from './components/Counter.jsx'
 import ItemAdder from './components/ItemAdder.jsx'
 import TodoList from './components/TodoList.jsx'
@@ -15,6 +15,13 @@ function App() {
   function closePopup() {
     setPopupOpen(false)
   }
+  useEffect(() => {
+    console.log("ONLY when component mounts")
+  }, [])
+  useEffect(() => {
+    console.log(`When component mounts AND ${popupOpen} changes`)
+  }, [popupOpen])
+  useEffect(() => {console.log("On every render")})
   return (
     <>
       <TodoList />
