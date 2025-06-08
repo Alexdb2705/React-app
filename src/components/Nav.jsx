@@ -8,8 +8,7 @@ function Nav() {
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/posts">Posts</Link>
-                <Link to="/users/MrBeast">Mr Beast</Link>
-                <Link to="/users/ibai">Ibai</Link>
+                <Link to="/users/1">1</Link>
             </nav>
         )
     }
