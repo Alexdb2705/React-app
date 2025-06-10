@@ -17,18 +17,6 @@ function Home() {
     }, [])
 
     return (
-        // <div>
-        //     <h1>Home</h1>
-        //     <div>
-        //         {
-        //             users.length > 0
-        //                 ? <h2>{users[0] !== undefined && users[0].username}</h2>
-        //                 : <h2>Loading...</h2>
-        //         }
-        //         <h2>{users.length > 0 && users[0].username}</h2>
-        //         <h2>{users[0]?.username}</h2>
-        //     </div>
-        // </div>
         <div>
             <Nav />
             <div>
