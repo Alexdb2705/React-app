@@ -16,7 +16,7 @@ function Users() {
 
     return (
         <div>
-            <h1>{user.id}</h1>
+            <h1>{user.id || "Loading"}</h1>
             <h1>{user.name}</h1>
             <h1>{user.username}</h1>
         </div>
